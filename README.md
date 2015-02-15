@@ -14,4 +14,4 @@ Control de sesiones
 Respaldo sql para crear las tablas en mysql
 
 Hecho Por Jaime Irazabal
-jaimeirazabal@gmail.com
+jaimeirazabal1@gmail.com
