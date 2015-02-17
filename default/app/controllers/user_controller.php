@@ -17,6 +17,24 @@ Class UserController extends AppController{
 			}
 		}
 	}
+	public function miperfil(){
+		if (Auth::is_valid()) {
+			$yo = new User();
+			$this->user = $yo->find(Auth::get("id"));
+			if (Input::haspost("passanterior","passnueva")) {
+				if(!$yo->verificarPassByUserId(Auth::get("id"),Input::post("passanterior"))){
+					Flash::error("Contraseña anterior no coincide");
+				}else{
+					if ($yo->cambiarPass(Auth::get("id"),Input::post("passnueva"))) {
+						Flash::valid("Contraseña Cambiada con éxito");
+					}else{
+						Flash::error("No se Cambio la Contraseña");
+					}
+				}
+			}
+		}
+	}
+
 }
 
  ?>

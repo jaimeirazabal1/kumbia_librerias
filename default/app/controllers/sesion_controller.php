@@ -14,6 +14,7 @@ class SesionController extends AppController{
             	}
             	Input::delete();
                 Flash::valid("Bienvenid@");
+                Router::redirect("user/miperfil");
             } else {
                 Flash::error("Email o Contraseña erroneos");
             }
